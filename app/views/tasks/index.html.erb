@@ -1,0 +1,11 @@
+<h1>Index</h1>
+
+<ul>
+<% @task.each do |task| %>
+<li> 
+<%= task.title %><%= link_to "details", task_path(task.id)  %>  <%= link_to "edit", edit_path(task.id) %> <%= link_to "delete", delete_path(task.id), method: delete %>
+</li>
+<% end %>
+</ul>
+
+<%= link_to "add a new task", tasks_new_path %>
